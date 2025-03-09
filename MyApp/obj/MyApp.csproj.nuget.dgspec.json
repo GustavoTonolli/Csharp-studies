@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj": {}
+    "C:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj": {}
   },
   "projects": {
-    "c:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj": {
+    "C:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj",
+        "projectUniqueName": "C:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "c:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj",
+        "projectPath": "C:\\Estudos\\Csharp-studies\\MyApp\\MyApp.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "c:\\Estudos\\Csharp-studies\\MyApp\\obj\\",
+        "outputPath": "C:\\Estudos\\Csharp-studies\\MyApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
