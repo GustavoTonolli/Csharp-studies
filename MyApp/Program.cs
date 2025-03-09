@@ -44,7 +44,7 @@ namespace MeuApp
             Console.WriteLine(texto);
             Console.WriteLine(numero);
             // operadores de atribuição
-            float i = 10; 
+            float i = 10;
             i += 10; // x = x - 10
             i -= 10; // x = x - 10
             i *= 10; // x = x * 10
@@ -89,9 +89,68 @@ namespace MeuApp
                     break;
             }
             // estruturas de repetição - Loops
-            
+            // for
+            for (int ind = 0; ind < 10; ind++)
+            {
+                Console.WriteLine(i);
+            }
+            // while
+            int j = 0;
+            while (j < 10)
+            {
+                Console.WriteLine(j);
+                j++;
+            }
+            // do while
+            int k = 0;
+            do
+            {
+                Console.WriteLine(k);
+                k++;
+            } while (k < 10);
 
-
+            // foreach
+            string[] nomes = { "João", "Maria", "José" };
+            foreach (string nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
+            // funções - métodos
+            static void Subtrair(int valor1, int valor2 = 10)
+            {
+                Console.WriteLine(valor1 - valor2);
+            }
+            Subtrair(10);
+            // funções - métodos com retorno
+            static int Somar(int valor1, int valor2)
+            {
+                return valor1 + valor2;
+            }
+            int resultado = Somar(10, 10);
+            Console.WriteLine(resultado);
+            // funções - métodos com retorno e parâmetros opcionais
+            static int Multiplicar(int valor1, int valor2 = 10)
+            {
+                return valor1 * valor2;
+            }
+            int resultado2 = Multiplicar(10);
+            MeuMetodo();
+            string nomeCompleto = RetornaNome("Gustavo", "Tonolli");
+            Console.WriteLine("Nome completo: " + nomeCompleto);
         }
+        // métodos estáticos são métodos que podem ser chamados sem instanciar a classe
+        static void MeuMetodo()
+        {
+            Console.WriteLine("C# é legal!!!");
+        }
+        static string RetornaNome(string nome, string sobrenome, int? idade = null) // idade é um parâmetro opcional, todos os opcionais devem ser os últimos
+        {
+            return nome + " " + sobrenome;
+        }
+        // tipos de referencia e tipos de valor
+        // tipos de valor são tipos que armazenam seus próprios dados
+        // tipos de referência são tipos que armazenam referências a seus dados
+        // tipos de valor: struct, enum, int, float, double, decimal, char, bool
+        // tipos de referência: class, interface, delegate, string, object
     }
 }
