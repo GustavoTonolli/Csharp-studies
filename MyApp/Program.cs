@@ -152,5 +152,19 @@ namespace MeuApp
         // tipos de referência são tipos que armazenam referências a seus dados
         // tipos de valor: struct, enum, int, float, double, decimal, char, bool
         // tipos de referência: class, interface, delegate, string, object
+        static void tipoDeReferencia(string[] args)
+        {
+            var arr = new string[2];
+            arr[0] = "Item 1";
+
+            var arr2 = arr;
+
+            Console.WriteLine(arr[0]);
+            Console.WriteLine(arr2[0]); // Item 1
+
+            arr[0] = "Item 2"; // quando alteramos o valor de arr, alteramos o valor de arr2 também, pois ambos apontam para o mesmo endereço de memória
+        }
     }
+
+    
 }
