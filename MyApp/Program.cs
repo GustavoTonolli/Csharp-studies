@@ -167,29 +167,59 @@ namespace MeuApp
         }
         static void ExemploStruct()
         {
-            var product = new Product(1, "Computador", 6500);
+            var product = new Product(1, "Computador", 6500, EProductType.Product); // Passando o tipo do produto como um Enum
             Console.WriteLine(product.Id);
             Console.WriteLine(product.Name);
             Console.WriteLine(product.Price);
             Console.WriteLine(product.PriceInDolar(6.2));
+            var cliente = new Cliente("João da Silva", EEstadoCivil.Solteiro);
+            Console.WriteLine(cliente.EstadoCivil);
+            Console.WriteLine((int)cliente.EstadoCivil); // retorna o valor do inteiro do enum
+            Console.WriteLine((int)product.Type); // Para retornar o inteiro do enum é preciso fazer uma conversão explícita para Inteiro(int)
         }
 
     }
     struct Product
     {
-        public Product(int id, string name, double price) // Este é o método construtor
+        public Product(int id, string name, double price, EProductType type) // Este é o método construtor
         {
             Id = id;
             Name = name;
             Price = price;
+            Type = type;
         }
         public int Id; // Propriedades sempre começam com letra maiúscula
         public string Name;
         public double Price;
+        public EProductType Type;
 
         public double PriceInDolar(double dolar) // Parâmetros sempre são minúsculas
         {
             return Price / dolar; // Diferenciação do que é propriedade e parâmetro pela letra inicial Maiúscula ou minúscula
         }
     }
+    enum EProductType 
+    {
+        Product = 1,
+        Service = 2
+    }
+
+    enum EEstadoCivil // Enum, por convenção sempre começa com E maiúsculo, pode ser usado como um tipo exemplos abaixo:
+    {
+        Solteiro = 1,
+        Casado = 2,
+        Divorciado = 3,
+    }
+
+    struct Cliente
+    {
+        public Cliente(string nome, EEstadoCivil estadoCivil)
+        {
+            Nome = nome;
+            EstadoCivil = estadoCivil;
+        }
+        public string Nome;
+        public EEstadoCivil EstadoCivil;
+    }
+
 }
