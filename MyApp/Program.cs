@@ -137,6 +137,7 @@ namespace MeuApp
             MeuMetodo();
             string nomeCompleto = RetornaNome("Gustavo", "Tonolli");
             Console.WriteLine("Nome completo: " + nomeCompleto);
+            ExemploStruct();
         }
         // métodos estáticos são métodos que podem ser chamados sem instanciar a classe
         static void MeuMetodo()
@@ -152,7 +153,7 @@ namespace MeuApp
         // tipos de referência são tipos que armazenam referências a seus dados
         // tipos de valor: struct, enum, int, float, double, decimal, char, bool
         // tipos de referência: class, interface, delegate, string, object
-        static void tipoDeReferencia(string[] args)
+        static void TipoDeReferencia(string[] args)
         {
             var arr = new string[2];
             arr[0] = "Item 1";
@@ -164,7 +165,31 @@ namespace MeuApp
 
             arr[0] = "Item 2"; // quando alteramos o valor de arr, alteramos o valor de arr2 também, pois ambos apontam para o mesmo endereço de memória
         }
-    }
+        static void ExemploStruct()
+        {
+            var product = new Product(1, "Computador", 6500);
+            Console.WriteLine(product.Id);
+            Console.WriteLine(product.Name);
+            Console.WriteLine(product.Price);
+            Console.WriteLine(product.PriceInDolar(6.2));
+        }
 
-    
+    }
+    struct Product
+    {
+        public Product(int id, string name, double price) // Este é o método construtor
+        {
+            Id = id;
+            Name = name;
+            Price = price;
+        }
+        public int Id; // Propriedades sempre começam com letra maiúscula
+        public string Name;
+        public double Price;
+
+        public double PriceInDolar(double dolar) // Parâmetros sempre são minúsculas
+        {
+            return Price / dolar; // Diferenciação do que é propriedade e parâmetro pela letra inicial Maiúscula ou minúscula
+        }
+    }
 }
